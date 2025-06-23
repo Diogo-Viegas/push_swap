@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:11:17 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/19 15:20:40 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/23 17:22:36 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 #include <stdbool.h>
 #include <limits.h>
+#include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
 typedef struct s_stack_node
 {
@@ -29,7 +31,52 @@ typedef struct s_stack_node
     struct s_stack_node *prev;
 }t_stack_node;
 
+int	ft_isdigit(int c);
+//errors
+int	error_syntax(char *str_n);
+int	error_duplicate(t_stack_node *a, int n);
+void	free_stack(t_stack_node **stack);
+void	free_errors(t_stack_node **a);
+//split
+char			**ft_split(char *s, char c);
+//stack utils
+bool stack_sorted(t_stack_node *stack);
+//init a to b
+void current_index(t_stack_node *stack);
+static void set_target_a(t_stack_node *stack_a, t_stack_node *stack_b);
+void set_cheapest(t_stack_node *stack);
+void init_nodes_a(t_stack_node *stack_a, t_stack_node *stack_b);
+//init b to a
+void init_nodes_b(t_stack_node *stack_a, t_stack_node *stack_b);
+//init stack
+void init_stack_a(t_stack_node **a, char **argv);
+void prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name);
+t_stack_node	*get_cheapest(t_stack_node *stack);
+//rotate
+void	ra(t_stack_node **stack_a, bool print);
+void	rb(t_stack_node **stack_b, bool print);
+void rr(t_stack_node **stack_a,t_stack_node **stack_b,bool print);
+//rev rotate
+void	rra(t_stack_node **stack_a, bool print);
+void	rrb(t_stack_node **stack_b, bool print);
+void	rrr(t_stack_node **stack_a, t_stack_node **stack_b, bool print);
+//sort stacks
+void sort_stack (t_stack_node **stack_a, t_stack_node **stack_b);
 
-char			**split(char *s, char c);
+//sort three
+void sort_three(t_stack_node **a);
+//stack utils 
+bool stack_sorted(t_stack_node *stack);
+int	stack_len(t_stack_node *stack);
+t_stack_node	*find_last(t_stack_node *stack);
+t_stack_node	*find_min(t_stack_node *stack);
+t_stack_node	*find_max(t_stack_node *stack);
+//swap
+void	sa(t_stack_node	**stack_a, bool print);
+void	sb(t_stack_node **stack_b, bool print);
+void	ss(t_stack_node **stack_a, t_stack_node **stack_b, bool print);
+//push
+void	pa(t_stack_node **stack_a, t_stack_node **stack_b, bool print);
+void	pb(t_stack_node **b, t_stack_node **a, bool print);
 
 #endif

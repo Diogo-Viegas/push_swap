@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   split.c                                            :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:19:50 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/19 15:27:05 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/23 16:56:13 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "push_swap.h"
 
 static int	count_words(char *s, char c)
 {
@@ -58,7 +58,7 @@ static char	*get_next_word(char *s, char c)
 	return (next_word);
 }
 
-char **split(char *s, char c) 
+char **ft_split(char *s, char c) 
 {
 	int		words_count; 
 	char	**result_array; 
