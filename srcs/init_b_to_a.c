@@ -6,11 +6,11 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 13:11:36 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/23 13:20:29 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/24 14:21:06 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 static void set_target_b(t_stack_node *stack_a, t_stack_node *stack_b)
 {
@@ -20,7 +20,7 @@ static void set_target_b(t_stack_node *stack_a, t_stack_node *stack_b)
 
     while(stack_b)
     {
-        best_match_index = LONG_MIN;
+        best_match_index = LONG_MAX;
         current_a = stack_a;
         while(current_a)
         {
@@ -31,7 +31,7 @@ static void set_target_b(t_stack_node *stack_a, t_stack_node *stack_b)
             }
             current_a = current_a->next;
         }
-        if(best_match_index == LONG_MIN)
+        if(best_match_index == LONG_MAX)
             stack_b->target_node = find_min(stack_a);
         else
             stack_b->target_node = target_node;

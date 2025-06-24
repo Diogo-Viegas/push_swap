@@ -6,11 +6,11 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 12:50:36 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/23 16:56:37 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/24 11:39:58 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 static void	rotate(t_stack_node **stack)
 {

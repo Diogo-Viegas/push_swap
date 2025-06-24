@@ -6,11 +6,11 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:28:25 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/23 17:39:19 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/24 17:09:27 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int	error_syntax(char *str_n) 
 {
@@ -28,14 +28,12 @@ int	error_syntax(char *str_n)
 
 int	error_duplicate(t_stack_node *a, int n) 
 {
-	printf("N -> %d\n",n);
 	if (!a)
 		return (0);
 	while (a) 
 	{
 		if (a->nbr == n)
 		{
-			printf("%d duplicated\n",n);
 			return (1);
 		}
 			

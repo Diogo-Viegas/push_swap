@@ -6,11 +6,11 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:11:13 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/23 16:56:24 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/24 17:20:49 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int	ft_isdigit(int c)
 {
@@ -33,6 +33,7 @@ int main (int argc, char **argv)
         return (1);
     else if(argc == 2)
         argv = ft_split(argv[1],' ');
+        
     init_stack_a(&stack_a,argv + 1);
 
     if(!stack_sorted(stack_a))
@@ -41,6 +42,8 @@ int main (int argc, char **argv)
             sa(&stack_a,false);
         else if(stack_len(stack_a) == 3)
             sort_three(&stack_a);
+        else
+            sort_stack(&stack_a,&stack_b);
     }
     free_stack(&stack_a);
 

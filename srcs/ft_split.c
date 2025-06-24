@@ -6,11 +6,11 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:19:50 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/23 16:56:13 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/24 17:20:20 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 static int	count_words(char *s, char c)
 {
@@ -66,7 +66,7 @@ char **ft_split(char *s, char c)
 
 	i = 0;
 	words_count = count_words(s, c);
-	if (!words_count) 
+	if (!words_count || words_count	== 1) 
 		exit(1);
 	result_array = malloc(sizeof(char *) * (size_t)(words_count + 2)); 
 	if (!result_array) 

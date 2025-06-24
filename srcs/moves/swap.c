@@ -6,11 +6,11 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 16:05:36 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/23 16:09:44 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/24 11:40:09 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 static void swap(t_stack_node **head)
 {

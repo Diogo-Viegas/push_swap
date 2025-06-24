@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:11:17 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/23 17:22:36 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/24 13:51:20 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ char			**ft_split(char *s, char c);
 bool stack_sorted(t_stack_node *stack);
 //init a to b
 void current_index(t_stack_node *stack);
-static void set_target_a(t_stack_node *stack_a, t_stack_node *stack_b);
 void set_cheapest(t_stack_node *stack);
 void init_nodes_a(t_stack_node *stack_a, t_stack_node *stack_b);
 //init b to a

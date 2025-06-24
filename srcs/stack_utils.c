@@ -6,11 +6,11 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 11:12:53 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/23 16:55:38 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/24 13:49:01 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int	stack_len(t_stack_node *stack)
 {

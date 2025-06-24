@@ -6,11 +6,11 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 12:06:42 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/23 16:50:44 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/24 14:25:20 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void current_index(t_stack_node *stack)
 {
@@ -53,6 +53,7 @@ static void set_target_a(t_stack_node *stack_a, t_stack_node *stack_b)
             }
             current_b = current_b->next;
         }
+
         if(best_match_index == LONG_MIN)
             stack_a->target_node = find_max(stack_b);
         else
