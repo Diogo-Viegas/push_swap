@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 10:35:17 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/25 00:29:28 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/25 11:21:07 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	append_node(t_stack_node **stack, int n)
 	}
 }
 
-void	init_stack_a(t_stack_node **a, char **argv)
+void	init_stack_a(t_stack_node **a, char **argv, char **to_free)
 {
 	long	n;
 	int		i;
@@ -67,18 +67,9 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	i = 0;
 	while (argv[i])
 	{
-		if (error_syntax(argv[i]))
-		{
-			if (n == 2)
-				free_array(argv);
-			else
-				free_errors(a);
-		}
 		n = ft_atol(argv[i]);
-		if (n > INT_MAX || n < INT_MIN)
-			free_errors(a);
-		if (error_duplicate(*a, (int)n))
-			free_errors(a);
+		if (is_invalid(argv[i], *a, n))
+			handle_error(a, to_free);
 		append_node(a, (int)n);
 		i++;
 	}

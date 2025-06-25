@@ -6,11 +6,18 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:28:25 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/25 00:27:46 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/25 11:20:49 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	handle_error(t_stack_node **a, char **to_free)
+{
+	if (to_free)
+		free_array(to_free);
+	free_errors(a);
+}
 
 int	error_syntax(char *str_n)
 {

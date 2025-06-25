@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 11:47:18 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/25 00:31:10 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/25 10:34:28 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,6 @@ static void	move_a_to_b(t_stack_node **stack_a, t_stack_node **stack_b)
 	pb(stack_b, stack_a, false);
 }
 
-static void	move_b_to_a(t_stack_node **stack_a, t_stack_node **stack_b)
-{
-	prep_for_push(stack_a, (*stack_b)->target_node, 'a');
-	pa(stack_a, stack_b, false);
-}
-
 static void	min_on_top(t_stack_node **stack_a)
 {
 	while ((*stack_a)->nbr != find_min(*stack_a)->nbr)
@@ -80,7 +74,8 @@ void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 	while (*stack_b)
 	{
 		init_nodes_b(*stack_a, *stack_b);
-		move_b_to_a(stack_a, stack_b);
+		prep_for_push(stack_a, (*stack_b)->target_node, 'a');
+		pa(stack_a, stack_b, false);
 	}
 	current_index(*stack_a);
 	min_on_top(stack_a);
