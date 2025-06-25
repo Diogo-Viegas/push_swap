@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:11:13 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/24 17:20:49 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/25 00:28:27 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,31 +21,50 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-int main (int argc, char **argv)
+void	free_array(char **splitted)
 {
-    t_stack_node *stack_a;
-    t_stack_node *stack_b;
+	int	i;
 
-    stack_a = NULL;
-    stack_b = NULL;
+	i = 0;
+	while (splitted[i])
+		free(splitted[i++]);
+	free(splitted);
+}
 
-    if(argc == 1 || (argc == 2 && !argv[1][0]))
-        return (1);
-    else if(argc == 2)
-        argv = ft_split(argv[1],' ');
-        
-    init_stack_a(&stack_a,argv + 1);
+int	main(int argc, char **argv)
+{
+	t_stack_node	*stack_a;
+	t_stack_node	*stack_b;
+	char			**free_splitted;
+	int				i;
 
-    if(!stack_sorted(stack_a))
-    {
-        if(stack_len(stack_a) == 2)
-            sa(&stack_a,false);
-        else if(stack_len(stack_a) == 3)
-            sort_three(&stack_a);
-        else
-            sort_stack(&stack_a,&stack_b);
-    }
-    free_stack(&stack_a);
-
-    return (0);
+	stack_a = NULL;
+	stack_b = NULL;
+	free_splitted = NULL;
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (1);
+	else if (argc == 2)
+	{
+		argv = ft_split(argv[1], ' ');
+		free_splitted = argv;
+	}
+	init_stack_a(&stack_a, argv + 1);
+	if (!stack_sorted(stack_a))
+	{
+		if (stack_len(stack_a) == 2)
+			sa(&stack_a, false);
+		else if (stack_len(stack_a) == 3)
+			sort_three(&stack_a);
+		else
+			sort_stack(&stack_a, &stack_b);
+	}
+	free_stack(&stack_a);
+	if (free_splitted)
+	{
+		i = 0;
+		while (free_splitted[i])
+			free(free_splitted[i++]);
+		free(free_splitted);
+	}
+	return (0);
 }
