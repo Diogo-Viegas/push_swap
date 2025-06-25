@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 11:26:35 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/25 10:33:34 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/25 12:10:09 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	sort_three(t_stack_node **a)
 
 	biggest_node = find_max(*a);
 	if (biggest_node == *a)
-		ra(a, false);
+		ra(a);
 	else if ((*a)->next == biggest_node)
-		rra(a, false);
+		rra(a);
 	if ((*a)->nbr > (*a)->next->nbr)
-		sa(a, false);
+		sa(a);
 }

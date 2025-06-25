@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:11:17 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/25 11:22:35 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/25 12:01:25 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,15 +58,13 @@ void					prep_for_push(t_stack_node **stack,
 							t_stack_node *top_node, char stack_name);
 t_stack_node			*get_cheapest(t_stack_node *stack);
 // rotate
-void					ra(t_stack_node **stack_a, bool print);
-void					rb(t_stack_node **stack_b, bool print);
-void					rr(t_stack_node **stack_a, t_stack_node **stack_b,
-							bool print);
+void					ra(t_stack_node **stack_a);
+void					rb(t_stack_node **stack_b);
+void					rr(t_stack_node **stack_a, t_stack_node **stack_b);
 // rev rotate
-void					rra(t_stack_node **stack_a, bool print);
-void					rrb(t_stack_node **stack_b, bool print);
-void					rrr(t_stack_node **stack_a, t_stack_node **stack_b,
-							bool print);
+void					rra(t_stack_node **stack_a);
+void					rrb(t_stack_node **stack_b);
+void					rrr(t_stack_node **stack_a, t_stack_node **stack_b);
 // sort stacks
 void					sort_stack(t_stack_node **stack_a,
 							t_stack_node **stack_b);
@@ -80,13 +78,11 @@ t_stack_node			*find_last(t_stack_node *stack);
 t_stack_node			*find_min(t_stack_node *stack);
 t_stack_node			*find_max(t_stack_node *stack);
 // swap
-void					sa(t_stack_node **stack_a, bool print);
-void					sb(t_stack_node **stack_b, bool print);
-void					ss(t_stack_node **stack_a, t_stack_node **stack_b,
-							bool print);
+void					sa(t_stack_node **stack_a);
+void					sb(t_stack_node **stack_b);
+void					ss(t_stack_node **stack_a, t_stack_node **stack_b);
 // push
-void					pa(t_stack_node **stack_a, t_stack_node **stack_b,
-							bool print);
-void					pb(t_stack_node **b, t_stack_node **a, bool print);
+void					pa(t_stack_node **stack_a, t_stack_node **stack_b);
+void					pb(t_stack_node **b, t_stack_node **a);
 void					free_array(char **splitted);
 #endif

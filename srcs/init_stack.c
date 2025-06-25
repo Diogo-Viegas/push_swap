@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 10:35:17 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/25 11:21:07 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/25 12:11:04 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,18 +96,16 @@ void	prep_for_push(t_stack_node **stack, t_stack_node *top_node,
 		if (stack_name == 'a')
 		{
 			if (top_node->above_median)
-				ra(stack, false);
+				ra(stack);
 			else
-				rra(stack, false);
+				rra(stack);
 		}
 		else if (stack_name == 'b')
 		{
 			if (top_node->above_median)
-			{
-				rb(stack, false);
-			}
+				rb(stack);
 			else
-				rrb(stack, false);
+				rrb(stack);
 		}
 	}
 }

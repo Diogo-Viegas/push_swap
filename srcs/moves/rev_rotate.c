@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 16:19:06 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/25 01:09:12 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/25 12:13:22 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,21 @@ static void	rev_rotate(t_stack_node **stack)
 	last->next->prev = last;
 }
 
-void	rra(t_stack_node **stack_a, bool print)
+void	rra(t_stack_node **stack_a)
 {
 	rev_rotate(stack_a);
-	if (!print)
-		write(1, "rra\n", 4);
+	write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack_node **stack_b, bool print)
+void	rrb(t_stack_node **stack_b)
 {
 	rev_rotate(stack_b);
-	if (!print)
-		write(1, "rrb\n", 4);
+	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack_node **stack_a, t_stack_node **stack_b, bool print)
+void	rrr(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	rev_rotate(stack_a);
 	rev_rotate(stack_b);
-	if (!print)
-		write(1, "rrr\n", 4);
+	write(1, "rrr\n", 4);
 }

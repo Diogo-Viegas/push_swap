@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:28:25 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/25 11:20:49 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/25 15:15:25 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ void	free_stack(t_stack_node **stack)
 void	free_errors(t_stack_node **a)
 {
 	free_stack(a);
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }

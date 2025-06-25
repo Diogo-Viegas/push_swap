@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 16:05:36 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/25 00:31:24 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/25 11:59:44 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,21 @@ static void	swap(t_stack_node **head)
 	(*head)->prev = NULL;
 }
 
-void	sa(t_stack_node **stack_a, bool print)
+void	sa(t_stack_node **stack_a)
 {
 	swap(stack_a);
-	if (!print)
-		write(1, "sa\n", 3);
+	write(1, "sa\n", 3);
 }
 
-void	sb(t_stack_node **stack_b, bool print)
+void	sb(t_stack_node **stack_b)
 {
 	swap(stack_b);
-	if (!print)
-		write(1, "sb\n", 3);
+	write(1, "sb\n", 3);
 }
 
-void	ss(t_stack_node **stack_a, t_stack_node **stack_b, bool print)
+void	ss(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
-	if (!print)
-		write(1, "ss\n", 3);
+	write(1, "ss\n", 3);
 }

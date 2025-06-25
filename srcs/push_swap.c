@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:11:13 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/25 11:25:14 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/06/25 15:19:14 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	handle_initial_stack_sort(t_stack_node *stack_a, t_stack_node *stack_b)
 	if (!stack_sorted(stack_a))
 	{
 		if (stack_len(stack_a) == 2)
-			sa(&stack_a, false);
+			sa(&stack_a);
 		else if (stack_len(stack_a) == 3)
 			sort_three(&stack_a);
 		else
@@ -62,6 +62,12 @@ int	main(int argc, char **argv)
 	free_splitted = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
+	if(argc == 2)
+	{
+		if(error_syntax(argv[1]))
+			return(write(2,"Error\n",6),1);
+	}
+		
 	else if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');
@@ -71,5 +77,7 @@ int	main(int argc, char **argv)
 	handle_initial_stack_sort(stack_a, stack_b);
 	if (free_splitted)
 		free_array(free_splitted);
+	if(stack_a)
+		free_stack(&stack_a);
 	return (0);
 }
