@@ -6,7 +6,7 @@
 /*   By: dviegas <dviegas@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:19:50 by dviegas           #+#    #+#             */
-/*   Updated: 2025/06/30 16:32:47 by dviegas          ###   ########.fr       */
+/*   Updated: 2025/07/03 22:54:28 by dviegas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ char	**ft_split(char *s, char c)
 
 	i = 0;
 	words_count = count_words(s, c);
-	if (!words_count || words_count == 1)
-		exit(1);
 	result_array = malloc(sizeof(char *) * (size_t)(words_count + 2));
 	if (!result_array)
 		return (NULL);
